@@ -29,7 +29,7 @@ static void render_callback(Canvas* const canvas, void* ctx) {
     furi_mutex_acquire(plugin_state->mutex, FuriWaitForever);
 
     canvas_set_font(canvas, FontPrimary);
-    elements_multiline_text_aligned(canvas, 64, 2, AlignCenter, AlignTop, "Flashlight");
+    elements_multiline_text_aligned(canvas, 64, 2, AlignCenter, AlignTop, "Laser");
 
     canvas_set_font(canvas, FontSecondary);
 
@@ -65,14 +65,14 @@ static void flash_toggle(PluginState* const plugin_state) {
     }
 }
 
-int32_t flashlight_app() {
+int32_t laser_app() {
     FuriMessageQueue* event_queue = furi_message_queue_alloc(8, sizeof(PluginEvent));
 
     PluginState* plugin_state = malloc(sizeof(PluginState));
 
     plugin_state->mutex = furi_mutex_alloc(FuriMutexTypeNormal);
     if(!plugin_state->mutex) {
-        FURI_LOG_E("flashlight", "cannot create mutex\r\n");
+        FURI_LOG_E("laser", "cannot create mutex\r\n");
         furi_message_queue_free(event_queue);
         free(plugin_state);
         return 255;
