@@ -53,14 +53,14 @@ static void input_callback(InputEvent* input_event, FuriMessageQueue* event_queu
 }
 
 static void flash_toggle(PluginState* const plugin_state) {
-    furi_hal_gpio_write(&gpio_ext_pc3, false);
-    furi_hal_gpio_init(&gpio_ext_pc3, GpioModeOutputPushPull, GpioPullNo, GpioSpeedVeryHigh);
+    furi_hal_gpio_write(&gpio_ext_pb2, false);
+    furi_hal_gpio_init(&gpio_ext_pb2, GpioModeOutputPushPull, GpioPullNo, GpioSpeedVeryHigh);
 
     if(plugin_state->is_on) {
-        furi_hal_gpio_write(&gpio_ext_pc3, false);
+        furi_hal_gpio_write(&gpio_ext_pb2, false);
         plugin_state->is_on = false;
     } else {
-        furi_hal_gpio_write(&gpio_ext_pc3, true);
+        furi_hal_gpio_write(&gpio_ext_pb2, true);
         plugin_state->is_on = true;
     }
 }
