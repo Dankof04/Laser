@@ -1,9 +1,9 @@
 App(
-    appid="flashlight",
-    name="Flashlight",
+    appid="laser",
+    name="Laser",
     apptype=FlipperAppType.EXTERNAL,
-    entry_point="flashlight_app",
-    cdefines=["APP_FLASHLIGHT"],
+    entry_point="laser_app",
+    cdefines=["APP_LASER"],
     requires=[
         "gui",
     ],
