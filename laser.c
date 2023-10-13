@@ -35,11 +35,11 @@ static void render_callback(Canvas* const canvas, void* ctx) {
 
     if(!plugin_state->is_on) {
         elements_multiline_text_aligned(
-            canvas, 64, 28, AlignCenter, AlignTop, "Press OK button turn on");
+            canvas, 64, 28, AlignCenter, AlignTop, "Press OK button turn laser on");
     } else {
-        elements_multiline_text_aligned(canvas, 64, 28, AlignCenter, AlignTop, "Light is on!");
+        elements_multiline_text_aligned(canvas, 64, 28, AlignCenter, AlignTop, "Laser is on :) !");
         elements_multiline_text_aligned(
-            canvas, 64, 40, AlignCenter, AlignTop, "Press OK button to off");
+            canvas, 64, 40, AlignCenter, AlignTop, "Press OK button to turn off");
     }
 
     furi_mutex_release(plugin_state->mutex);
